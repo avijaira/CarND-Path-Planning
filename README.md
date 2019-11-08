@@ -1,4 +1,4 @@
-# CarND-Path-Planning-Project
+# CarND-Path-Planning
 Self-Driving Car Engineer Nanodegree Program
 
 ### Simulator.
@@ -153,7 +153,5 @@ A well written README file can enhance your project and portfolio.  Develop your
 
 ## References
 https://medium.com/intro-to-artificial-intelligence/path-planning-project-udacitys-self-driving-car-nanodegree-be1f531cc4f7
-
-https://medium.com/behavior-trees-for-path-planning-autonomous/behavior-trees-for-path-planning-autonomous-driving-8db1575fec2c
 
 https://github.com/awbrown90/CarND-Path-Planning-Project
