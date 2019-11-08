@@ -22,7 +22,7 @@ The highway's waypoints loop around so the frenet s value, distance along the ro
 
 2. The car drives according to the speed limit: The car doesn't drive faster than the speed limit. Also the car isn't driving much slower than speed limit unless obstructed by traffic.
 
--- This is achieved by maintaining the car's current speed (```car_speed```) to be equal to goal velocity (```goal_v```), which is determined using sensor fusion data, and max speed allowed for the car (```TOP_V = 49.5```).
+- [x] This is achieved by maintaining the car's current speed (```car_speed```) to be equal to goal velocity (```goal_v```), which is determined using sensor fusion data, and max speed allowed for the car (```TOP_V = 49.5```).
 
 3. Max Acceleration and Jerk are not exceeded: The car does not exceed a total acceleration of 10 m/s^2 and a jerk of 10 m/s^3.
 
