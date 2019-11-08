@@ -162,11 +162,17 @@ int main() {
               }
             }
 
+            /*
             if (other_in_front) {
               // slow down to other car's speed
               // may not be sufficient if too close to the other car (<10 meters)
-              goal_v = other_speed * TO_MPH - 5.0;
+              if (other_car_s - car_s > 20) {
+                goal_v = other_speed * TO_MPH;
+              } else {
+                goal_v = other_speed * TO_MPH - 5.0;
+              }
             }
+            */
           }
 
           // Keep Lane or Lane Change Left or Lane Change Right
