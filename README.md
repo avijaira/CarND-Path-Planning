@@ -26,7 +26,7 @@ The highway's waypoints loop around so the frenet s value, distance along the ro
 
 3. Max Acceleration and Jerk are not exceeded: The car does not exceed a total acceleration of 10 m/s^2 and a jerk of 10 m/s^3.
 
-- [x]
+- [x] The car's current speed (```car_speed```) is only increased or decreased by 0.1 m/s or 0.2237 MPH (```TO_MPH / 10```)
 
 4. Car does not have collisions: The car must not come into contact with any of the other cars on the road.
 
