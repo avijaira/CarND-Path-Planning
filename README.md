@@ -34,11 +34,11 @@ The highway's waypoints loop around so the frenet s value, distance along the ro
 
 5. The car stays in its lane, except for the time between changing lanes: The car doesn't spend more than a 3 second length out side the lane lanes during changing lanes, and every other time the car stays inside one of the 3 lanes on the right hand side of the road.
 
-- [x]
+- [x] When we are generating trajectory (spline) for our car, we use map waypoints at 30, 60, and 90 meters, and car's current lane to center our car within each lane (```main.cpp: Line 213 - 218```).
 
 6. The car is able to change lanes: The car is able to smoothly change lanes when it makes sense to do so, such as when behind a slower moving car and an adjacent lane is clear of other traffic.
 
-- [x]
+- [x] A lane change, left or right, is considered safe when there are no other cars, in the target lane, within 30 meters of our car (i.e. no car <30 meters in front or back). A lane change is only triggered when our car is behind a slower car (i.e. driving slower than the speed limit).
 
 ## Basic Build Instructions
 
