@@ -22,14 +22,23 @@ The highway's waypoints loop around so the frenet s value, distance along the ro
 
 2. The car drives according to the speed limit: The car doesn't drive faster than the speed limit. Also the car isn't driving much slower than speed limit unless obstructed by traffic.
 
+- [x] This is achieved by maintaining car's current speed (```car_speed```) to be equal to goal velocity (```goal_v```) which is determined using sensor fusion data and max speed allowed (```double TOP_V = 49.5;```).
 
 3. Max Acceleration and Jerk are not exceeded: The car does not exceed a total acceleration of 10 m/s^2 and a jerk of 10 m/s^3.
 
+- [x]
+
 4. Car does not have collisions: The car must not come into contact with any of the other cars on the road.
+
+- [x]
 
 5. The car stays in its lane, except for the time between changing lanes: The car doesn't spend more than a 3 second length out side the lane lanes during changing lanes, and every other time the car stays inside one of the 3 lanes on the right hand side of the road.
 
+- [x]
+
 6. The car is able to change lanes: The car is able to smoothly change lanes when it makes sense to do so, such as when behind a slower moving car and an adjacent lane is clear of other traffic.
+
+- [x]
 
 ## Basic Build Instructions
 
