@@ -94,9 +94,6 @@ int main() {
 
           json msgJson;
 
-
-          ///// AV /////
-
           double TOP_V = 49.5;
           int FL = 4;    // Width of full lane, 4 meters.
           int HL = 2;    // Width of half lane, 2 meters.
@@ -105,14 +102,10 @@ int main() {
           double FROM_MPH = 0.447;    // Convert from MPH to m/s by multiplying with FROM_MPH.
           double PPS = 0.02;    // Simulator does 50 points/s. 1 point/s = 1/50 = 0.02
 
-
           // bool tailgating = false;    // Driving too closely behind another vehicle.
           bool other_in_front = false;
           bool other_on_left = false;
           bool other_on_right = false;
-
-          // bool change_lane = false;    // ???
-          // double car_dist = max_s;    // ???
 
           int previous_wps = previous_path_x.size();    // Previous path size in number of waypoints (<= 50).
 
@@ -126,7 +119,7 @@ int main() {
           for (int i = 0; i < sensor_fusion.size(); i++) {
             // Find out if there is another car within 4 meters of our lane.
             float d = sensor_fusion[i][6];
-            int other_lane;    // other car's lane; AV_NOV07
+            int other_lane;    // other car's lane
             double other_car_s = sensor_fusion[i][5];    // other car
             double other_xv = sensor_fusion[i][3];    // x velocity
             double other_yv = sensor_fusion[i][4];    // y velocity
@@ -165,7 +158,6 @@ int main() {
             /*
             if (other_in_front) {
               // slow down to other car's speed
-              // may not be sufficient if too close to the other car (<10 meters)
               if (other_car_s - car_s > 20) {
                 goal_v = other_speed * TO_MPH;
               } else {
@@ -177,10 +169,6 @@ int main() {
 
           // Keep Lane or Lane Change Left or Lane Change Right
           if (other_in_front) {
-            // slow down to other car's speed
-            // may not be sufficient if too close to the other car (<10 meters)
-            // goal_v = other_speed * TO_MPH;
-
             if (!other_on_left && lane > 0) {
               lane--;  // Safe to switch to left lane
             } else if (!other_on_right && lane < 2) {
@@ -193,22 +181,7 @@ int main() {
             goal_v += TO_MPH / 10;  // Increase by 0.1 m/s or 0.2237 MPH
           }
 
-            /*
-              if (other_car_s > car_s && (other_car_s - car_s < 30 && other_speed * TO_MPH < goal_v)) {
-                goal_v = other_speed * TO_MPH;
-                tailgating = true;
-              }
-
-
-          if (tailgating) {
-            goal_v -= TO_MPH / 10;  // Decrease by 0.1 m/s or 0.2237 MPH
-          } else if (goal_v < TOP_V) {
-            goal_v += TO_MPH / 10;  // Increase by 0.1 m/s or 0.2237 MPH
-          }
-          */
-
           ///// END: Utilize sensor fusion data to avoid collision /////
-
 
           double goal_x = car_x;
           double goal_y = car_y;
@@ -281,7 +254,7 @@ int main() {
           double target_dist = sqrt(target_x * target_x + target_y * target_y);
           double x_addon = 0.0;
 
-          for (int i = 1; i < 50 - previous_wps; i++) {    // AV_NOV07: <= to <
+          for (int i = 1; i < 50 - previous_wps; i++) {
 
             if(goal_v > car_speed) {
               car_speed += TO_MPH / 10;  // Increase by 0.1 m/s or 0.2237 MPH
@@ -306,8 +279,6 @@ int main() {
             next_x_vals.push_back(x_point);
             next_y_vals.push_back(y_point);
           }
-
-          ///// END_AV /////
 
           msgJson["next_x"] = next_x_vals;
           msgJson["next_y"] = next_y_vals;

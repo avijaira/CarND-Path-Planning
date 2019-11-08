@@ -30,7 +30,7 @@ The highway's waypoints loop around so the frenet s value, distance along the ro
 
 4. Car does not have collisions: The car must not come into contact with any of the other cars on the road.
 
-- [x]
+- [x] The sensor fusion data for all other cars on the road is analyzed to avoid collisions. If there is a possibility of collision, the car has two options to avoid collision: if its safe, change lane, or slow down. First find the other car's lane (```main.cpp: Line 131 - 138```), and then locate this other car w.r.t. our car (```main.cpp: Line 140 - 156```). When a car is in front of our car, change lane if its safe, otherwise slow down (```main.cpp: Line 171 - 182```).
 
 5. The car stays in its lane, except for the time between changing lanes: The car doesn't spend more than a 3 second length out side the lane lanes during changing lanes, and every other time the car stays inside one of the 3 lanes on the right hand side of the road.
 
