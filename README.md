@@ -38,7 +38,7 @@ The highway's waypoints loop around so the frenet s value, distance along the ro
 
 6. The car is able to change lanes: The car is able to smoothly change lanes when it makes sense to do so, such as when behind a slower moving car and an adjacent lane is clear of other traffic.
 
-- [x] A lane change, left or right, is considered safe when there are no other cars, in the target lane, within 30 meters of our car (i.e. no car <30 meters in front or back). A lane change is only triggered when our car is behind a slower car (i.e. driving slower than the speed limit).
+- [x] A lane change, left or right, is considered safe when there are no other cars, in the target lane, within 30 meters of our car (i.e. no car < 30 meters in front or back). A lane change is only triggered when our car is behind a slower car (i.e. driving slower than the speed limit).
 
 ## Basic Build Instructions
 
